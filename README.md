@@ -3,7 +3,7 @@
 
 This is a Laravel 5 package to enable you to easily interface with the Google Safebrowsing API. (Other RBL services are coming.)
 
-Right now it's only using the [Google Safebrowsing Lookup API](https://developers.google.com/safe-browsing/v4/lookup-api) (v4), but I'll be updating it to include the Update API as well.
+Right now it's only using the [Google Safebrowsing Lookup API](https://developers.google.com/safe-browsing/v4/lookup-api) (v4), but I'll be updating it to include the Update API as well. The [old (non-package) version](http://snipe.net/2014/04/check-user-submitted-urls-for-malware-and-phishing-in-your-application/) of this script has also included Phishtank and several RBLs, but I think the RBLs have changed how they work  so that old code doesn't work anymore. 
 
 This package requires that you have [an active Google Safebrowing API key](https://developers.google.com/safe-browsing/v4/get-started). It absolutely will not work without one. It's free to create an API key (although the process is every bit as confusing and convoluted as you would expect from Google). Bear in mind that they do throttle free accounts, so if this is a high-traffic site, you may want to build in a caching layer or something so you don't burn through your requests too quickly. You can keeo an eye on your usage through the [Google API console](https://console.developers.google.com/apis/api/safebrowsing.googleapis.com/usage).
 

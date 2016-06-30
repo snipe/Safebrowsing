@@ -7,7 +7,11 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is a Laravel 5 package to easily enable you to interface with the Google Safebrowsing API and other RBL services that check for malicious links.
+This is a Laravel 5 package to enable you to easily interface with the Google Safebrowsing API. (Other RBL services are coming.)
+
+## Prerequisites
+
+This package requires that you have an active Google Safebrowing API key.
 
 ## Install
 
@@ -47,6 +51,17 @@ Safebrowsing::addCheckUrls(['http://malware.testing.google.test/testing/malware/
 Safebrowsing::execute();
 print('Status of the third URL is: '.Safebrowsing::isFlagged('http://twitter.com/'));
 ```
+
+## Test URLs
+
+Here are some handy test urls you can use while you're experimenting with the system.
+
+ok      http://www.yahoo.com/
+ok      http://www.google.com/
+malware http://malware.testing.google.test/testing/malware/
+ok      http://twitter.com/
+malware http://ianfette.org
+ok      https://github.com/
 
 ## Change log
 

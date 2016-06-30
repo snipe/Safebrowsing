@@ -70,12 +70,12 @@ print('Status of the third URL is: '.Safebrowsing::isFlagged('http://twitter.com
 
 Here are some handy test urls you can use while you're experimenting with the system.
 
-ok      http://www.yahoo.com/
-ok      http://www.google.com/
-malware http://malware.testing.google.test/testing/malware/
-ok      http://twitter.com/
-malware http://ianfette.org
-ok      https://github.com/
+- http://www.yahoo.com/ (OK)
+- http://www.google.com/ (OK)
+- http://malware.testing.google.test/testing/malware/ (Malware)
+- http://twitter.com/ (OK)
+- http://ianfette.org (malware)
+- https://github.com/ (OK)
 
 ## Change log
 

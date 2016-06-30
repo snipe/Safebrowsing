@@ -1,5 +1,5 @@
 {
-    "name": "Snipe/Safebrowsing",
+    "name": "snipe/safebrowsing",
     "type": "library",
     "description": "Laravel package to allow you to easily integrate the Google Safebrowing API into your application.",
     "keywords": [

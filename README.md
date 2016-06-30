@@ -44,6 +44,18 @@ to your `aliases` array in `config/app.php`.
 {{ Safebrowsing::checkSafeBrowsing($urls) }}
 ```
 
+of
+
+``` php
+@if (Safebrowsing::isFlagged('http://twitter.com/'))
+    // do something if the url is flagged as suspicious
+@else
+    // hooray - it's not flagged!
+@endif
+```
+
+
+
 where `$url` is an array of URLs that you would like to check against the Google Safebrowsing API.
 
 ### Using Facades

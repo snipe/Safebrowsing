@@ -11,7 +11,7 @@
         "URL"
     ],
     "homepage": "https://github.com/Snipe/Safebrowsing",
-    "license": "GPL",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "A. Gianotto",

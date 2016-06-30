@@ -3,9 +3,12 @@
     "type": "library",
     "description": "Laravel package to allow you to easily integrate the Google Safebrowing API into your application.",
     "keywords": [
-        "Snipe",
+        "snipe",
         "Safebrowsing",
-        "Google"
+        "Google",
+        "malware",
+        "RBL",
+        "URL"
     ],
     "homepage": "https://github.com/Snipe/Safebrowsing",
     "license": "MIT",
@@ -41,7 +44,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "0.1.0-dev"
         }
     }
 }

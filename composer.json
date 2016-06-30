@@ -1,18 +1,19 @@
 {
     "name": "Snipe/Safebrowsing",
     "type": "library",
-    "description": ":package_description",
+    "description": "Laravel package to allow you to easily integrate the Google Safebrowing API into your application.",
     "keywords": [
         "Snipe",
-        "Safebrowsing"
+        "Safebrowsing",
+        "Google"
     ],
     "homepage": "https://github.com/Snipe/Safebrowsing",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "A. Gianotto",
+            "email": "snipe@snipe.net",
+            "homepage": "http://snipe.net",
             "role": "Developer"
         }
     ],

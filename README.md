@@ -1,11 +1,5 @@
 # Safebrowsing
-
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/snipe/safebrowsing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/snipe/safebrowsing.svg?branch=master)](https://travis-ci.org/snipe/safebrowsing) [![Latest Stable Version](https://poser.pugx.org/snipe/safebrowsing/v/stable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Total Downloads](https://poser.pugx.org/snipe/safebrowsing/downloads.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Latest Unstable Version](https://poser.pugx.org/snipe/safebrowsing/v/unstable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![License](https://poser.pugx.org/snipe/safebrowsing/license.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb21765a140141e6828035a376733a80)](https://www.codacy.com/app/snipe/Safebrowsing?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=snipe/Safebrowsing&amp;utm_campaign=Badge_Grade) (https://packagist.org/packages/inacho/php-credit-card-validator) [![Total Downloads]
 
 This is a Laravel 5 package to enable you to easily interface with the Google Safebrowsing API. (Other RBL services are coming.)
 
@@ -44,7 +38,7 @@ to your `aliases` array in `config/app.php`.
 {{ Safebrowsing::checkSafeBrowsing($urls) }}
 ```
 
-of
+or
 
 ``` php
 @if (Safebrowsing::isFlagged('http://twitter.com/'))
@@ -104,7 +98,7 @@ If you discover any security related issues, please email snipe@snipe.net instea
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+GNU GENERAL PUBLIC LICENSE. Please see [License File](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/snipe/safebrowsing.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square

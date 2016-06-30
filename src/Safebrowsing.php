@@ -10,43 +10,19 @@ class Safebrowsing {
     }
 
 
-    /*
-    $urls = [
-        'http://www.yahoo.com/',
-        'http://www.google.com/',
-        'http://malware.testing.google.test/testing/malware/',
-        'http://twitter.com/',
-        'http://ianfette.org',
-
-    ];
-    //return trans('safebrowsing::messages.greeting');
-    //
-    //     ok      http://www.yahoo.com/
-    //     ok      http://www.google.com/
-    //     malware http://malware.testing.google.test/testing/malware/
-    //     ok      http://twitter.com/
-    //     malware http://ianfette.org
-    //     ok      https://github.com/
-    //
-    //
-    return self::checkSafeBrowsing($urls);
-
-     */
 
     /**
     * Invokes the Safebrowing API
     *
     * @author [A. Gianotto] [<snipe@snipe.net>]
     * @param $url string|array
-    * @since [v1.0]
+    * @since [v0.1.0]
     * @return String JSON
     */
-
-    public function checkSafeBrowsing($urls)
+    public static function checkSafeBrowsing($urls)
     {
 
         $postUrl = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key='.config('safebrowsing.google.api_key');
-
 
         $payload = [
             'client' => [
@@ -57,10 +33,10 @@ class Safebrowsing {
                 "threatTypes"       =>   config('safebrowsing.google.threat_types'),
                 "platformTypes"     =>   config('safebrowsing.google.threat_platforms'),
                 "threatEntryTypes" => ["URL"],
-                "threatEntries" => $this->formatUrls($urls),
+                "threatEntries" => Safebrowsing::formatUrls($urls),
             ]
         ];
-        dd($payload);
+
         $ch = curl_init();
         $timeout = config('safebrowsing.google.timeout');
         curl_setopt($ch,CURLOPT_URL,$postUrl);
@@ -87,43 +63,45 @@ class Safebrowsing {
     }
 
 
-    // public function addCheckUrl($url) {
-    //     $this->urls[] = $url;
-    //     return $this->urls;
-    // }
-
     public function addCheckUrls(array $urls) {
-        //print_r($urls);
-        //  foreach( $urls as $url ) {
-        //      $this->urls[] = array_push($this->urls, $url);
-        //  }
         $this->urls = array_merge($this->urls, $urls);
-        return $this->urls;
+        return $this;
     }
 
 
-    public function removeUrl() {
-
+    public function removeUrls(array $urls) {
+        $this->urls = array_pop($this->urls, $urls);
+        return $this;
     }
 
 
     public function execute() {
         $this->results = self::checkSafeBrowsing($this->urls);
-        return $this->results;
     }
 
-    // parse through the results
-    public function isFlagged() {
 
+    public function isFlagged($url) {
+        $results_arr = json_decode($this->results);
+        foreach ($results_arr->matches as $result) {
+            if ($result->threat->url == $url) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function getUrls() {
         return $this->urls;
     }
 
-    public function formatUrls($urls) {
-        $this->urls[] = $this->addCheckUrls($urls);
-        return $this->urls;
+
+    // Format for google
+    public static function formatUrls($urls) {
+        $arr = array();
+        foreach ($urls as $url) {
+            $arr[] = ['url' => $url];
+        }
+        return $arr;
     }
 
 

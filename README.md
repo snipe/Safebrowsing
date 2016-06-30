@@ -3,13 +3,13 @@
 
 This is a Laravel 5 package to enable you to easily interface with the Google Safebrowsing API. (Other RBL services are coming.)
 
-Right now it's only using the [Google Safebrowsing Lookup API](https://developers.google.com/safe-browsing/v4/lookup-api) (v4), but I'll be updating it to include the Update API as well. The [old Safebrowser v3 (non-package) version](http://snipe.net/2014/04/check-user-submitted-urls-for-malware-and-phishing-in-your-application/) of this script has also included Phishtank and several RBLs, but I think the RBLs have changed how they work so that old code doesn't work anymore.
+Right now it's only using the [Google Safebrowsing Lookup API](https://developers.google.com/safe-browsing/v4/lookup-api) (v4), but I'll be updating it to include the Update API as well. The [old Safebrowsing v3 (non-package) version](http://snipe.net/2014/04/check-user-submitted-urls-for-malware-and-phishing-in-your-application/) of this script has also included Phishtank and several RBLs, but I think the RBLs have changed how they work so that old code doesn't work anymore.
 
 __This package requires that you have [an active Google Safebrowsing API key](https://developers.google.com/safe-browsing/v4/get-started). It absolutely will not work without one.__ It's free to create an API key (although the process is every bit as confusing and convoluted as you would expect from Google).
 
 Bear in mind that Google does throttle API usage, so if you have a high-traffic site, you may want to build in a caching layer or something so you don't burn through your requests too quickly. You can keep an eye on your usage through the [Google API console](https://console.developers.google.com/apis/api/safebrowsing.googleapis.com/usage).
 
-
+__This package is very rough around the edges and probably shouldn't be used for production yet.__ 
 
 ## Install
 
@@ -19,15 +19,15 @@ Bear in mind that Google does throttle API usage, so if you have a high-traffic 
 $ composer require snipe/safebrowsing
 ```
 
-### Update config/app.php
+### Update Your Config
 
-Add
+Open `config/app.php` and add:
 
 ``` php
 Snipe\Safebrowsing\SafebrowsingServiceProvider::class,
 ```
 
-to your `providers` array in `config/app.php`, and
+to your `providers` array in `config/app.php`, and:
 
 ``` php
 'Safebrowsing' => Snipe\Safebrowsing\Facade\Safebrowsing::class,

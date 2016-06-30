@@ -1,11 +1,13 @@
 # Safebrowsing
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/snipe/safebrowsing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/snipe/Safebrowsing.svg?branch=master)](https://travis-ci.org/snipe/Safebrowsing) [![Latest Stable Version](https://poser.pugx.org/snipe/safebrowsing/v/stable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Total Downloads](https://poser.pugx.org/snipe/safebrowsing/downloads.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Latest Unstable Version](https://poser.pugx.org/snipe/safebrowsing/v/unstable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![License](https://poser.pugx.org/snipe/safebrowsing/license.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb21765a140141e6828035a376733a80)](https://www.codacy.com/app/snipe/Safebrowsing?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=snipe/Safebrowsing&amp;utm_campaign=Badge_Grade) 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/snipe/safebrowsing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/snipe/Safebrowsing.svg?branch=master)](https://travis-ci.org/snipe/Safebrowsing) [![Latest Stable Version](https://poser.pugx.org/snipe/safebrowsing/v/stable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Total Downloads](https://poser.pugx.org/snipe/safebrowsing/downloads.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Latest Unstable Version](https://poser.pugx.org/snipe/safebrowsing/v/unstable.svg)](https://packagist.org/packages/snipe/safebrowsing) [![License](https://poser.pugx.org/snipe/safebrowsing/license.svg)](https://packagist.org/packages/snipe/safebrowsing) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb21765a140141e6828035a376733a80)](https://www.codacy.com/app/snipe/Safebrowsing?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=snipe/Safebrowsing&amp;utm_campaign=Badge_Grade)
 
 This is a Laravel 5 package to enable you to easily interface with the Google Safebrowsing API. (Other RBL services are coming.)
 
-## Prerequisites
+Right now it's only using the [Google Safebrowsing Lookup API](https://developers.google.com/safe-browsing/v4/lookup-api) (v4), but I'll be updating it to include the Update API as well.
 
-This package requires that you have an active Google Safebrowing API key.
+This package requires that you have [an active Google Safebrowing API key](https://developers.google.com/safe-browsing/v4/get-started). It absolutely will not work without one. It's free to create an API key (although the process is every bit as confusing and convoluted as you would expect from Google). Bear in mind that they do throttle free accounts, so if this is a high-traffic site, you may want to build in a caching layer or something so you don't burn through your requests too quickly. You can keeo an eye on your usage through the [Google API console](https://console.developers.google.com/apis/api/safebrowsing.googleapis.com/usage).
+
+
 
 ## Install
 

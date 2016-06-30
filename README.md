@@ -17,11 +17,35 @@ Via Composer
 $ composer require snipe/safebrowsing
 ```
 
-## Usage
+Then add
 
 ``` php
-$safebrowsing = new Snipe\safebrowsing();
-echo $safebrowsing->echoPhrase('Hello, League!');
+Snipe\Safebrowsing\SafebrowsingServiceProvider::class,
+```
+
+to your `providers` array in `config/app.php`, and
+
+``` php
+'Safebrowsing' => Snipe\Safebrowsing\Facade\Safebrowsing::class,
+```
+
+to your `aliases` array in `config/app.php`.
+
+
+## Usage
+
+### Using Blade Syntax
+
+``` php
+{{ Safebrowsing::checkSafeBrowsing($urls) }}
+```
+
+### Using Facades
+``` php
+Safebrowsing::addCheckUrls(['http://ianfette.org']);
+Safebrowsing::addCheckUrls(['http://malware.testing.google.test/testing/malware/']);
+Safebrowsing::execute();
+print('Status of the third URL is: '.Safebrowsing::isFlagged('http://twitter.com/'));
 ```
 
 ## Change log
@@ -30,8 +54,10 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
+From the package
+
 ``` bash
-$ composer test
+`../../../vendor/bin/phpunit`
 ```
 
 ## Contributing

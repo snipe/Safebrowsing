@@ -44,6 +44,8 @@ to your `aliases` array in `config/app.php`.
 {{ Safebrowsing::checkSafeBrowsing($urls) }}
 ```
 
+where `$url` is an array of URLs that you would like to check against the Google Safebrowsing API.
+
 ### Using Facades
 ``` php
 Safebrowsing::addCheckUrls(['http://ianfette.org']);

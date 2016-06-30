@@ -14,4 +14,4 @@ matrix:
 
 install: travis_retry composer install --no-interaction
 
-script: ./vendor/bin/codecept run unit --env testing-ci
+script: ./vendor/bin/phpunit ./Tests

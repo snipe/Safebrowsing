@@ -39,6 +39,8 @@ class Safebrowsing {
 
         $ch = curl_init();
         $timeout = config('safebrowsing.google.timeout');
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch,CURLOPT_URL,$postUrl);
         curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($payload));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

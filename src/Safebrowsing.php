@@ -82,9 +82,11 @@ class Safebrowsing {
 
     public function isFlagged($url) {
         $results_arr = json_decode($this->results);
-        foreach ($results_arr->matches as $result) {
-            if ($result->threat->url == $url) {
-                return true;
+        if (isset($results_arr->matches)) {
+            foreach ($results_arr->matches as $result) {
+                if ($result->threat->url == $url) {
+                    return true;
+                }
             }
         }
         return false;

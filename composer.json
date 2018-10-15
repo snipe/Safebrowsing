@@ -45,6 +45,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Snipe\\Safebrowsing\\SafebrowsingServiceProvider"
+            ],
+            "aliases": {
+                "Debugbar": "Snipe\\Safebrowsing\\Facade\\Safebrowsing"
+            }
         }
     }
 }

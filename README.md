@@ -21,6 +21,8 @@ $ composer require snipe/safebrowsing
 
 ### Update Your Config
 
+#### For applications using Laravel =< 5.4
+
 Open `config/app.php` and add:
 
 ``` php

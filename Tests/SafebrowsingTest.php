@@ -1,25 +1,30 @@
 <?php
-class SafebrowsingTest extends TestCase
+
+use Snipe\Safebrowsing\Safebrowsing;
+
+class SafebrowsingTest extends \PHPUnit_Framework_TestCase
 {
     public function testAddCheckUrls()
     {
+        $safebrowsing = new Safebrowsing();
 
         $start_urls = [
             'http://yahoo.com',
             'http://google.com'
         ];
 
-        Safebrowsing::addCheckUrls($start_urls);
+        $safebrowsing->addCheckUrls($start_urls);
 
         $add_urls = [
             'http://snipe.net',
             'http://ianfette.org',
         ];
 
-        Safebrowsing::addCheckUrls($add_urls);
-        $this->assertEquals(4, count(Safebrowsing::getUrls()));
-        $this->assertEquals($add_urls[1], Safebrowsing::getUrls()[3]);
-        $this->assertEquals($start_urls[0], Safebrowsing::getUrls()[0]);
+        $safebrowsing->addCheckUrls($add_urls);
+        $this->assertEquals(4, count($safebrowsing->getUrls()));
+        $this->assertEquals($add_urls[1], $safebrowsing->getUrls()[3]);
+        $this->assertEquals($start_urls[0], $safebrowsing->getUrls()[0]);
 
     }
+
 }

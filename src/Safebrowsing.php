@@ -63,12 +63,25 @@ class Safebrowsing {
     }
 
 
+    /**
+     * Adds additional urls to checked array
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @param  $url string
+     * @return Safebrowsing
+     */
     public function addCheckUrls(array $urls) {
         $this->urls = array_merge($this->urls, $urls);
         return $this;
     }
 
-
+    /**
+     * Removes urls from checked array
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @param  $url string
+     * @return Safebrowsing
+     */
     public function removeUrls(array $urls) {
         $this->urls = array_pop($this->urls, $urls);
         return $this;
@@ -80,6 +93,13 @@ class Safebrowsing {
     }
 
 
+    /**
+     * Checks whether a url is flagged as unsafe
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @param  $url string
+     * @return boolean
+     */
     public function isFlagged($url) {
         $results_arr = json_decode($this->results);
         if (isset($results_arr->matches)) {

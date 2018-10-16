@@ -51,7 +51,7 @@
                 "Snipe\\Safebrowsing\\SafebrowsingServiceProvider"
             ],
             "aliases": {
-                "Debugbar": "Snipe\\Safebrowsing\\Facade\\Safebrowsing"
+                "Safebrowsing": "Snipe\\Safebrowsing\\Facade\\Safebrowsing"
             }
         }
     }

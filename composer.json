@@ -21,7 +21,6 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.1",
         "php": ">=5.5.5"
     },
     "require-dev": {
